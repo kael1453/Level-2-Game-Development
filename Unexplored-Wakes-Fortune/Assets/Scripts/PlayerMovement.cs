@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    // For moving forwards and sideways based on orientation, rather than absolute position.
+    [SerializeField] Transform orientation;
 
     public float walkSpeed = 6f;
     public float sprintSpeed = 8f;
     public float gravity = -9.81f;
-    public float jumpForce = 2f;
+    public float jumpHeight = 2f;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f; // Radius of the groundCheck sphere.
@@ -45,11 +45,11 @@ public class PlayerMovement : MonoBehaviour
             controller.slopeLimit = 100.0f; // To make sure that downwards velocity doesn't increase when we are on slopes we cannot walk on.
 
             
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             
         }
 
-        // amogus
+        // Limit the player to a terminal velocity.
         if(velocity.y < -terminalVelocity)
             {
                 velocity.y = -terminalVelocity;

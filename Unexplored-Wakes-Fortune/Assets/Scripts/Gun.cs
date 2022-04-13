@@ -1,49 +1,86 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
-    public float range = 100f;
-    public float fireRate = 15f;
-    public float impactForce = 100f;
-
+    public GunData gunData;
+    
     public Camera fpsCamera;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
+    public Transform muzzle;
+    Pool bulletPool;
 
     public Vector3 hitEffectOffset;
-    private float nextTimeToFire = 0f;
+    float timeSinceLastShot;
 
-
-    void Update()
+    private void Start()
     {
-        if(Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+        bulletPool = new Pool(gunData.bulletPrefab, 10);
+
+        PlayerShoot.shootInput += Shoot;
+        PlayerShoot.reloadInput += StartReload;
+
+        gunData.reloading = false;
+    }
+
+    private void Update()
+    {
+        timeSinceLastShot += Time.deltaTime;
+    }
+
+    private bool CanShoot() => !gunData.reloading && timeSinceLastShot > (1f / (gunData.fireRate / 60f));
+    // && gunData.currentAmmo > 0
+    public void Shoot()
+    {
+        if (CanShoot())
         {
-            nextTimeToFire = Time.time + 1f/fireRate;
-            Shoot();
+            muzzleFlash.Play();
+
+            // Activate the next bullet in the pool.
+            bulletPool.ActivateNext(muzzle.transform.position, muzzle.transform.rotation);
+            gunData.currentAmmo--;
+            timeSinceLastShot = 0f;
+            OnGunShot();
+            /*
+            RaycastHit hit;
+            if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, gunData.maxDistance))
+            {
+                
+
+                GameObject hitEffectGameObject = Instantiate(impactEffect, hit.point + hitEffectOffset, Quaternion.LookRotation(hit.normal));
+                Destroy(hitEffectGameObject, 3f);
+            }
+            */
+
+        }
+
+    }
+
+    private void OnGunShot()
+    {
+        // Something.
+    }
+
+    public void StartReload()
+    {
+        if (!gunData.reloading)
+        {
+            StartCoroutine(Reload());
         }
     }
 
-    void Shoot()
+    private IEnumerator Reload()
     {
-        muzzleFlash.Play();
+        gunData.reloading = true;
 
-        RaycastHit hit;
-        if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
-        {
-            Target target = hit.transform.GetComponent<Target>();
-            if(target != null)
-            {
-                target.TakeDamage(damage);
-            }
+        yield return new WaitForSeconds(gunData.reloadTime);
 
-            if(hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
+        gunData.currentAmmo = gunData.magazineSize;
+        print("reloadingfinished");
 
-            GameObject hitEffectGameObject = Instantiate(impactEffect, hit.point + hitEffectOffset, Quaternion.LookRotation(hit.normal));
-            Destroy(hitEffectGameObject, 3f);
-        }
+        gunData.reloading = false;
     }
 }

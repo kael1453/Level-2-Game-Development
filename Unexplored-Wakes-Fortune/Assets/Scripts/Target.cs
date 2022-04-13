@@ -1,21 +1,15 @@
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target : MonoBehaviour, IDamageable
 {
-    public float health = 50f;
+    private float health = 100f;
 
-    public void TakeDamage(float amount)
+    public void Damage(float damage)
     {
-        health -= amount;
-
-        if(health <= 0)
+        health -= damage;
+        if (health <= 0)
         {
-            Die();
+            Destroy(gameObject);
         }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject);
     }
 }
