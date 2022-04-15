@@ -4,6 +4,7 @@ public class Pool
 {
     GameObject[] gameObjects;
     int m_numObjects = 0;
+    int nextBullet = 0;
 
     Pool bulletPool;
 
@@ -20,6 +21,14 @@ public class Pool
 
     public void ActivateNext(Vector3 position, Quaternion rotation)
     {
+        gameObjects[nextBullet].transform.position = position;
+        gameObjects[nextBullet].transform.rotation = rotation;
+        gameObjects[nextBullet].SetActive(true);
+
+
+        nextBullet = (nextBullet + 1) % gameObjects.Length;
+
+        /*
         // Cycle through all the objects in the pool to find the next inactive object.
         for (int i = 0; i < m_numObjects; i++)
         {
@@ -29,9 +38,19 @@ public class Pool
                 gameObjects[i].SetActive(true);
                 gameObjects[i].transform.position = position;
                 gameObjects[i].transform.rotation = rotation;
-                
+
+                break; // So that we don't activate all of them...
+            }
+            else
+            {
+                // Use the oldest bullet instead.
+                gameObjects[i].SetActive(true);
+                gameObjects[i].transform.position = position;
+                gameObjects[i].transform.rotation = rotation;
+
                 break; // So that we don't activate all of them...
             }
         }
+        */
     }
 }

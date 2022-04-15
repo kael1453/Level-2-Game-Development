@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunData: {fileID: 0}
   lineRenderer: {fileID: -3146446834694679867}
-  speed: 100
+  length: 6
+  speed: 200
   hitParticleSystem: {fileID: 456088444919034800, guid: 3bb6a991792be5647b2362ba5d9a5c67, type: 3}
 --- !u!120 &-3146446834694679867
 LineRenderer:

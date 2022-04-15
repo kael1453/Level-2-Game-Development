@@ -6,9 +6,9 @@ public class Bullet : MonoBehaviour
     // the pool script.
     public GunData gunData;
     [SerializeField] LineRenderer lineRenderer;
-    float length = 6f;
+    [SerializeField] float length = 6f;
 
-    public float speed = 200f;
+    public float speed = 100f;
     Vector3 lastPosition;
 
     RaycastHit[] hit = new RaycastHit[1];
@@ -38,6 +38,10 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
+        // Make it invisible at the start so that it doesn't appear at its original position when re-activated/fired again.
+        // Line of zero length = invisible.
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, transform.position);
         age = 0f;
     }
 
@@ -69,7 +73,7 @@ public class Bullet : MonoBehaviour
         age += Time.deltaTime;
         if(age > lifetime)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
     }
 }
