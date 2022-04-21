@@ -23,7 +23,7 @@ public class Gun : MonoBehaviour
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
 
-        gunData.reloading = false;
+        gunData.reloading = false; // To make sure that we can reload.
     }
 
     private void Update()
@@ -31,8 +31,8 @@ public class Gun : MonoBehaviour
         timeSinceLastShot += Time.deltaTime;
     }
 
-    private bool CanShoot() => !gunData.reloading && timeSinceLastShot > (1f / (gunData.fireRate / 60f));
-    // && gunData.currentAmmo > 0
+    private bool CanShoot() => !gunData.reloading && timeSinceLastShot > (1f / (gunData.fireRate / 60f)) && gunData.currentAmmo > 0;
+    // 
     public void Shoot()
     {
         if (CanShoot())
@@ -64,9 +64,11 @@ public class Gun : MonoBehaviour
         // Something.
     }
 
+    private void OnDisable() => gunData.reloading = false; // Stop reloading if the gun isn't equipped.
+
     public void StartReload()
     {
-        if (!gunData.reloading)
+        if (!gunData.reloading && this.gameObject.activeSelf)
         {
             StartCoroutine(Reload());
         }
@@ -74,13 +76,13 @@ public class Gun : MonoBehaviour
 
     private IEnumerator Reload()
     {
-        gunData.reloading = true;
+        gunData.reloading = true; // Start reloading.
 
-        yield return new WaitForSeconds(gunData.reloadTime);
+        yield return new WaitForSeconds(gunData.reloadTime); // Wait until the reload time to finish reloading.
 
-        gunData.currentAmmo = gunData.magazineSize;
+        gunData.currentAmmo = gunData.magazineSize; // The actual reloading.
         print("reloadingfinished");
 
-        gunData.reloading = false;
+        gunData.reloading = false; // Finish reloading, allowing us to reload again if we wish.
     }
 }

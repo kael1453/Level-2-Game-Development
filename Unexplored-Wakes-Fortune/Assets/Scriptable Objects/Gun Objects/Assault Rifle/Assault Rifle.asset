@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Assault Rifle
   bulletPrefab: {fileID: 557208037772386429, guid: ba07de7e8e581314abd046ef9015c53b, type: 3}
+  isAutomatic: 0
   damage: 22
   maxDistance: 200
-  currentAmmo: 100
+  currentAmmo: -289
   magazineSize: 100
   fireRate: 600
   reloadTime: 1.5
-  impactForce: 20
-  reloading: 1
+  impactForce: 100
+  reloading: 0

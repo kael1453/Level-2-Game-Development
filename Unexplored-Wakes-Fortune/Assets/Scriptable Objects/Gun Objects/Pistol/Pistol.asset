@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pistol
   bulletPrefab: {fileID: 557208037772386429, guid: ba07de7e8e581314abd046ef9015c53b, type: 3}
+  isAutomatic: 0
   damage: 22
   maxDistance: 200
-  currentAmmo: 9
+  currentAmmo: -2
   magazineSize: 9
   fireRate: 50
   reloadTime: 1
-  impactForce: 10
-  reloading: 1
+  impactForce: 50
+  reloading: 0
