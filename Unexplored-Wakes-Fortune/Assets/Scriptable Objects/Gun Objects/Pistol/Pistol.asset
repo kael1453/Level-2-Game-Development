@@ -17,7 +17,7 @@ MonoBehaviour:
   isAutomatic: 0
   damage: 22
   maxDistance: 200
-  currentAmmo: -2
+  currentAmmo: 0
   magazineSize: 9
   fireRate: 50
   reloadTime: 1

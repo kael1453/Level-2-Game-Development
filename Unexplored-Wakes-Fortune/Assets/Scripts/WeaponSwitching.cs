@@ -89,45 +89,7 @@ public class WeaponSwitching : MonoBehaviour
 
     private void OnWeaponSelected()
     {
-        print("Weapon selected!");
+        return;
     }
-
-
-    /*
-    public int selectedWeapon = 0;
-
-    void Start()
-    {
-        SelectWeapon();
-    }
-
-    void Update()
-    {
-        int previousSelectedWeapon = selectedWeapon;
-
-        
-
-        // If the current weapon is not the same as the previous, change to that new weapon.
-        if (previousSelectedWeapon != selectedWeapon)
-        {
-            SelectWeapon();
-        }
-    }
-
-    // Activate the current weapon.
-    void SelectWeapon(){
-        int i = 0;
-        foreach (Transform weapon in transform)
-        {
-            if(i == selectedWeapon)
-            {
-                weapon.gameObject.SetActive(true);
-            }
-            else
-            {
-                weapon.gameObject.SetActive(false);
-            }
-            i++;
-        }*/
 }
 

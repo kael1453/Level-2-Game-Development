@@ -80,8 +80,6 @@ public class PlayerMovement : MonoBehaviour
             pushPowerWithSpeed = pushPower * walkSpeed;
         }
 
-        Vector3 RigidbodyMovement = new Vector3();
-
         // Do the actual movement.
         controller.Move(move * Time.deltaTime);
     }

@@ -20,8 +20,8 @@ public class Gun : MonoBehaviour
     {
         bulletPool = new Pool(gunData.bulletPrefab, 10);
 
-        PlayerShoot.shootInput += Shoot;
-        PlayerShoot.reloadInput += StartReload;
+        PlayerShoot.shootInput += Shoot; // Call shoot when shootInput?.Invoke() is called.
+        PlayerShoot.reloadInput += StartReload; // Same for the reload.
 
         gunData.reloading = false; // To make sure that we can reload.
     }
@@ -32,7 +32,7 @@ public class Gun : MonoBehaviour
     }
 
     private bool CanShoot() => !gunData.reloading && timeSinceLastShot > (1f / (gunData.fireRate / 60f)) && gunData.currentAmmo > 0;
-    // 
+    
     public void Shoot()
     {
         if (CanShoot())
