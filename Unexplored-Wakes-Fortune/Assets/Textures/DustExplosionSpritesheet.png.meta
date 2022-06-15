@@ -324,6 +324,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2500,6 +2501,107 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      DustExplosionSpritesheet_65: 1675711945105473243
+      DustExplosionSpritesheet_82: 6264725116464736311
+      DustExplosionSpritesheet_57: -244560582054918091
+      DustExplosionSpritesheet_39: 3271554933917232993
+      DustExplosionSpritesheet_29: -2034866835234373647
+      DustExplosionSpritesheet_18: 7640527054342008624
+      DustExplosionSpritesheet_70: -4065571320574078867
+      DustExplosionSpritesheet_8: -7682673954618826296
+      DustExplosionSpritesheet_37: -6148784297246848322
+      DustExplosionSpritesheet_60: 7219030715270487629
+      DustExplosionSpritesheet_28: -1149575138284707148
+      DustExplosionSpritesheet_23: 3607405313728238227
+      DustExplosionSpritesheet_25: -2625148198170082656
+      DustExplosionSpritesheet_48: -587018058416102783
+      DustExplosionSpritesheet_40: 6576766025936341522
+      DustExplosionSpritesheet_46: -6786610035985750730
+      DustExplosionSpritesheet_71: -7150528021039480218
+      DustExplosionSpritesheet_63: 8895927489352776302
+      DustExplosionSpritesheet_93: -7854867505809165310
+      DustExplosionSpritesheet_2: -7805659067009519862
+      DustExplosionSpritesheet_13: 9096452381109791578
+      DustExplosionSpritesheet_32: 926134402093480545
+      DustExplosionSpritesheet_76: 2984163980163333264
+      DustExplosionSpritesheet_95: 218882953603473873
+      DustExplosionSpritesheet_21: 2624824298144879620
+      DustExplosionSpritesheet_67: -4891319045037402063
+      DustExplosionSpritesheet_3: 179888865189730358
+      DustExplosionSpritesheet_55: 2118696808527115756
+      DustExplosionSpritesheet_58: -7969728557313750925
+      DustExplosionSpritesheet_38: -8321036576681744651
+      DustExplosionSpritesheet_20: -6411515275018184028
+      DustExplosionSpritesheet_66: -6679359103933790355
+      DustExplosionSpritesheet_87: 8321725153364913955
+      DustExplosionSpritesheet_92: -7032399858980331264
+      DustExplosionSpritesheet_96: -3501006826165950516
+      DustExplosionSpritesheet_83: 8458577292548455626
+      DustExplosionSpritesheet_50: -8750392036914557213
+      DustExplosionSpritesheet_69: 9134345085235115174
+      DustExplosionSpritesheet_30: -355579906475465660
+      DustExplosionSpritesheet_49: 2471418256564054435
+      DustExplosionSpritesheet_44: 2408651194014310675
+      DustExplosionSpritesheet_19: -6843630233481426337
+      DustExplosionSpritesheet_0: 8588096551832256925
+      DustExplosionSpritesheet_31: -6279486262079218392
+      DustExplosionSpritesheet_88: 4480023963744426375
+      DustExplosionSpritesheet_78: 7166707444713574936
+      DustExplosionSpritesheet_52: 3522733568410759031
+      DustExplosionSpritesheet_36: 4522557023005601288
+      DustExplosionSpritesheet_33: -300776881592163423
+      DustExplosionSpritesheet_62: 925125060689690353
+      DustExplosionSpritesheet_98: -9103337984880156018
+      DustExplosionSpritesheet_14: -3044784678795078090
+      DustExplosionSpritesheet_89: 4803902046964649119
+      DustExplosionSpritesheet_97: 6782089051179032542
+      DustExplosionSpritesheet_47: -650716714768928044
+      DustExplosionSpritesheet_7: 416134828815844262
+      DustExplosionSpritesheet_22: 7280065240849564877
+      DustExplosionSpritesheet_45: 3761938334125431244
+      DustExplosionSpritesheet_94: -2311773222762140736
+      DustExplosionSpritesheet_99: 3961664212718298825
+      DustExplosionSpritesheet_6: -7950494835690586834
+      DustExplosionSpritesheet_34: -1218882359301517403
+      DustExplosionSpritesheet_85: 392322053680770272
+      DustExplosionSpritesheet_59: -303981496097668568
+      DustExplosionSpritesheet_72: -8016530695435932946
+      DustExplosionSpritesheet_12: -6474836030603476716
+      DustExplosionSpritesheet_16: 8799825253807399940
+      DustExplosionSpritesheet_54: 1757968263516155847
+      DustExplosionSpritesheet_56: -5605909035767586488
+      DustExplosionSpritesheet_80: 4568767257573261261
+      DustExplosionSpritesheet_43: 7140210064705391857
+      DustExplosionSpritesheet_53: -1333496775215573395
+      DustExplosionSpritesheet_73: 984440794587320150
+      DustExplosionSpritesheet_61: 1817096923427799472
+      DustExplosionSpritesheet_74: -5920150815383261152
+      DustExplosionSpritesheet_27: -8716670444574091315
+      DustExplosionSpritesheet_81: -1455282866838994051
+      DustExplosionSpritesheet_90: -3513449102285520352
+      DustExplosionSpritesheet_77: 3656651860900308806
+      DustExplosionSpritesheet_79: -6275107186825832537
+      DustExplosionSpritesheet_75: 8249951184320394027
+      DustExplosionSpritesheet_1: 4691965390300862963
+      DustExplosionSpritesheet_41: -5482658930998442057
+      DustExplosionSpritesheet_26: -1125772683959113124
+      DustExplosionSpritesheet_15: -2712788977454020679
+      DustExplosionSpritesheet_68: 8555431682265002497
+      DustExplosionSpritesheet_64: -3368010334725056063
+      DustExplosionSpritesheet_11: -6199581717277531852
+      DustExplosionSpritesheet_86: 866619903044751601
+      DustExplosionSpritesheet_51: -3456155319159523779
+      DustExplosionSpritesheet_35: -6172557220169965226
+      DustExplosionSpritesheet_84: 5574505352407874550
+      DustExplosionSpritesheet_24: 2071019916767319754
+      DustExplosionSpritesheet_9: 1140576883574101479
+      DustExplosionSpritesheet_5: -6715255931226963503
+      DustExplosionSpritesheet_42: -4445405744988659240
+      DustExplosionSpritesheet_4: 3259377025540584673
+      DustExplosionSpritesheet_91: 6091392668698536753
+      DustExplosionSpritesheet_17: -5096760912587672580
+      DustExplosionSpritesheet_10: -2728915788145456377
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

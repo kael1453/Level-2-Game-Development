@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Rigidbody body = hit.collider.attachedRigidbody;
 
-        // No rigidbody.
+        // No rigidbody or uses a kinematic body, which doesn't work with this.
         if (body == null || body.isKinematic)
         {
             return;
